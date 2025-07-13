@@ -1,35 +1,60 @@
-# vue-study
+# ゐななのうどん屋さん ファンクラブサイト
 
-This template should help get you started developing with Vue 3 in Vite.
+## 概要
 
-## Recommended IDE Setup
+このリポジトリは、SNSで活躍する「ゐなな」さんのファンクラブ向けWebサイトです。
+Vue 3 + Vite を用いて作成されており、ピンク基調のかわいいデザインと、SNS連携・ギャラリー・グッズ情報・お仕事依頼などの機能を備えています。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 主な特徴
 
-## Customize configuration
+- ログイン不要、誰でも閲覧可能なファンクラブサイト
+- ニュース、イベント、グッズ情報、お仕事依頼、フォトギャラリーの各セクション
+- SNS（TikTok, Twitter, Instagram, YouTube, ツイキャス）へのリンクと本物のアイコン表示
+- レスポンシブ対応（スマホ・タブレット・PCで快適表示）
+- 画像やテキストのカスタマイズが簡単
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## セットアップ方法
 
-## Project Setup
+1. **リポジトリをクローン**
+   ```bash
+   git clone <このリポジトリのURL>
+   cd fun-site
+   ```
+2. **依存パッケージのインストール**
+   ```bash
+   npm install
+   ```
+3. **開発サーバーの起動**
+   ```bash
+   npm run dev
+   ```
+   ブラウザで `http://localhost:5173` などにアクセスしてください。
 
-```sh
-npm install
-```
+## 画像の追加・変更方法
 
-### Compile and Hot-Reload for Development
+- `src/assets/` フォルダに画像ファイル（例: `inana_n1.jpg` など）を追加
+- ニュースやギャラリーの画像は `src/views/FanclubView.vue` 内の該当配列でパスを指定
+  - 例: `import newsImg1 from '@/assets/inana_n1.jpg'`
+- 画像を差し替える場合は、同名ファイルを上書きするか、配列のパスを変更してください
 
-```sh
-npm run dev
-```
+## カスタマイズ例
 
-### Compile and Minify for Production
+- セクションの順番や内容は `src/views/FanclubView.vue` で編集可能
+- SNSアカウントやリンク先も同ファイルで編集
+- 色やフォントは `src/assets/base.css` や各Vueファイルのstyleブロックで調整
 
-```sh
+## 本番ビルド
+
+```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+`dist/` フォルダに静的ファイルが出力されます。
 
-```sh
-npm run lint
-```
+## ライセンス
+
+このプロジェクトは個人利用・ファンクラブ用途向けです。商用利用や再配布はご相談ください。
+
+---
+
+ご質問・ご要望は「お仕事依頼」セクションのメールアドレスまでご連絡ください。
