@@ -1,39 +1,73 @@
 <template>
   <div id="app">
-    <!-- Bootstrap ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <router-link class="navbar-brand" to="/">My Vue App</router-link>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <router-link class="nav-link" to="/" active-class="active">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/about" active-class="active">About</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- ルーターで表示されるコンテンツ -->
-    <main class="container mt-4">
-      <router-view />
-    </main>
+    <router-view />
   </div>
 </template>
 
 <style>
-.router-link-active {
-  font-weight: bold;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff0f5;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    scroll-padding-top: 180px;
+  }
+}
+
+/* ボタンのフォーカススタイル */
+button:focus,
+input:focus {
+  outline: 2px solid #ec4899;
+  outline-offset: 2px;
+}
+
+/* リンクのスタイル */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ec4899;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777;
 }
 </style>
